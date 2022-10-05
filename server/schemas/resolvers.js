@@ -1,9 +1,9 @@
-const { User, Thought } = require('../models');
+const { User, Movie } = require('../models');
 
 const resolvers = {
     Query: {
-      thoughts: async () => {
-        return Thought.find().sort({ createdAt: -1 });
+      movie: async () => {
+        return Movie.find().sort({ createdAt: -1 });
       }
     }
   };

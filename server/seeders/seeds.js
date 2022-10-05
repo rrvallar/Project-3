@@ -1,23 +1,23 @@
 // const faker = require('faker');
 const userSeeds = require('./userSeed.json');
-const thoughtSeeds = require('./thoughtSeed.json');
+const movieSeeds = require('./movieSeed.json');
 const db = require('../config/connection');
-const { Thought, User } = require('../models');
+const { Movie, User } = require('../models');
 
 db.once('open', async () => {
   try {
-    await Thought.deleteMany({});
+    await Movie.deleteMany({});
     await User.deleteMany({});
 
     await User.create(userSeeds);
 
-    for (let i = 0; i < thoughtSeeds.length; i++) {
-      const { _id, thoughtAuthor } = await Thought.create(thoughtSeeds[i]);
+    for (let i = 0; i < movieSeeds.length; i++) {
+      const { _id, thoughtAuthor } = await Movie.create(movieSeeds[i]);
       const user = await User.findOneAndUpdate(
         { username: thoughtAuthor },
         {
           $addToSet: {
-            thoughts: _id,
+            savedMovie: _id,
           },
         }
       );

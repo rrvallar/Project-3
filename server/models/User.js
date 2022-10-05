@@ -20,18 +20,18 @@ const userSchema = new Schema(
       required: true,
       minlength: 5
     },
-    thoughts: [
+    savedMovie: [
       {
         type: Schema.Types.ObjectId,
-        ref: 'Thought'
+        ref: 'Movie'
       }
     ],
-    friends: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: 'User'
-      }
-    ]
+    // friends: [
+    //   {
+    //     type: Schema.Types.ObjectId,
+    //     ref: 'User'
+    //   }
+    // ]
   },
   {
     toJSON: {
