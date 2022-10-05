@@ -1,4 +1,6 @@
 const { User, Movie } = require("../models");
+const { AuthenticationError } = require('apollo-server-express');
+const { signToken } = require('../utils/auth');
 
 const resolvers = {
   Query: {
@@ -16,19 +18,41 @@ const resolvers = {
         .populate("friends")
         .populate("movieTitle");
     },
-    /// Get movies for user by username ///
+    /// Get all movies ///
     movies: async (parent, { username }) => {
       const params = username ? { username } : {};
       return Movie.find(params).sort({ createdAt: -1 });
     },
+    /// Get a movie by ID ///
+    movies: async (parent, { _id }) => {
+      return Movie.findOne({ _id });
+    },
   },
+/// Mutation Start ///
   Mutation: {
+    /// Mutation For Adding User ///
     addUser: async (parent, args) => {
       const user = await User.create(args);
-
-      return user;
+      const token = signToken(user);
+    
+      return { token, user };
     },
-    login: async () => {},
+    login: async (parent, { email, password }) => {
+      const user = await User.findOne({ email });
+    
+      if (!user) {
+        throw new AuthenticationError('Incorrect credentials');
+      }
+    
+      const correctPw = await user.isCorrectPassword(password);
+    
+      if (!correctPw) {
+        throw new AuthenticationError('Incorrect credentials');
+      }
+    
+      const token = signToken(user);
+      return { token, user };
+    }
   },
 };
 
