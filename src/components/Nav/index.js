@@ -6,19 +6,19 @@ function Nav({ handleClick }) {
     <header>
       <nav>
         <ul className="flex-row">
-         {/* ----------Profile navbar section start------------------ */}
+          {/* ----------Profile navbar section start------------------ */}
           <li className="mx-2">
             <span data-testid="Profile" onClick={() => handleClick("Profile")}>
               <h3>Profile</h3>
             </span>
           </li>
-           {/* ----------- Browse navbar section start --------------- */}
+          {/* ----------- Browse navbar section start --------------- */}
           <li className="mx-2">
             <span data-testid="Browse" onClick={() => handleClick("Browse")}>
               <h3>Browse</h3>
             </span>
           </li>
-           {/* ------------------ Landing navbar section start -------------- */}
+          {/* ------------------ Landing navbar section start -------------- */}
           <li className="mx-2">
             <span data-testid="Landing" onClick={() => handleClick("Landing")}>
               <h3>Landing</h3>

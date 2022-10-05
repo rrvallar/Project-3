@@ -4,8 +4,8 @@ import React from "react";
 function Landing() {
   return (
     // All html will be rendered for Landing component //
-    <section id="Landing">
-        {/* ------------------ Sign Up Form Start -------------- */}
+    <section>
+      {/* ------------------ Sign Up Form Start -------------- */}
       <h2 class="text-center varela-font">Sign Up</h2>
       <form id="contact-form  ">
         <div class="borderBoxContact">
@@ -60,4 +60,5 @@ function Landing() {
   );
 }
 
+/// Export Landing Function ///
 export default Landing;
