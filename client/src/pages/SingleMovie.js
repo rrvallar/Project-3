@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SingleThought = props => {
+const SingleMovie = props => {
   return (
     <div>
       <div className="card mb-3">
@@ -8,14 +8,14 @@ const SingleThought = props => {
           <span style={{ fontWeight: 700 }} className="text-light">
             Username
           </span>{' '}
-          thought on createdAt
+          Picked Movie On:
         </p>
         <div className="card-body">
-          <p>Thought Text</p>
+          <p>Movie Choice</p>
         </div>
       </div>
     </div>
   );
 };
 
-export default SingleThought;
+export default SingleMovie;
