@@ -17,10 +17,6 @@ const MovieList = ({ movies, title }) => {
             </p>
             <div className="card-body">
               <p>{movie.movieTitle}</p>
-              <p className="mb-0">
-                Reactions: {movie.reactionCount} || Click to{' '}
-                {movie.reactionCount ? 'see' : 'start'} the discussion!
-              </p>
             </div>
           </div>
         ))}
