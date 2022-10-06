@@ -1,6 +1,7 @@
 const express = require('express');
 // import ApolloServer
 const { ApolloServer } = require('apollo-server-express');
+// Import Middleware Function From Auth //
 const { authMiddleware } = require('./utils/auth');
 
 // import our typeDefs and resolvers
@@ -12,6 +13,7 @@ const PORT = process.env.PORT || 3001;
 const server = new ApolloServer({
   typeDefs,
   resolvers,
+  // ensures that every request performs an authentication check //
   context: authMiddleware
 });
 
