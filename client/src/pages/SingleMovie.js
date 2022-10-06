@@ -13,7 +13,7 @@ console.log(movies)
 if (loading) {
   return <div>Loading...</div>;
 }
-  
+  //Shows movies on page//
   return (
     <div>
     <div className="card mb-3">
