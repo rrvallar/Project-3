@@ -1,12 +1,12 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
-import { QUERY_THOUGHTS } from '../utils/queries';
+import { QUERY_MOVIES } from '../utils/queries';
 import MovieList from '../components/MovieList';
 
 //Home Page//
 const Home = () => {
   // use useQuery hook to make query request//
-  const { loading, data } = useQuery(QUERY_THOUGHTS);
+  const { loading, data } = useQuery(QUERY_MOVIES);
   //get the movie data out of the query's response//
   const movies = data?.movies || [];
 console.log(movies);

@@ -1,23 +1,37 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
-import { QUERY_MOVIE } from '../utils/queries';
+import { QUERY_MOVIES } from '../utils/queries';
 
 const SingleMovie = props => {
-  console.log(props)
+  const { id: movieId } = useParams();
+
+const { loading, data } = useQuery(QUERY_MOVIES);
+
+const movies = data?.movies || {};
+console.log(movies)
+if (loading) {
+  return <div>Loading...</div>;
+}
+  
   return (
     <div>
-      <div className="card mb-3">
-        <p className="card-header">
+    <div className="card mb-3">
+      <p className="card-header">
+        {loading===false?(movies.map(movie => <div>
           <span style={{ fontWeight: 700 }} className="text-light">
-            Username
-          </span>{' '}
-          Picked Movie On:
-        </p>
+          {movie.username}
+        </span>{' '}
+        thought on {movie.createdAt}
         <div className="card-body">
-          <p>Movie Choice</p>
-        </div>
+        <p>{movie.movieTitle}</p>
       </div>
+        </div>)):""}
+        
+      </p>
+      
     </div>
+  </div>
   );
 };
 
