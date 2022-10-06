@@ -63,7 +63,22 @@ Mutation: {
   
     const token = signToken(user);
     return { token, user };
+  }, 
+  addMovie: async (parent, args, context) => {
+  if (context.user) {
+    const movie = await Movie.create({ ...args, username: context.user.username });
+
+    await User.findByIdAndUpdate(
+      { _id: context.user._id },
+      { $push: { movies: movie._id } },
+      { new: true }
+    );
+
+    return movie;
   }
+
+  throw new AuthenticationError('You need to be logged in!');
+}
 }
 };
 
