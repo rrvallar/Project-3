@@ -4,6 +4,7 @@ const express = require("express");
 const { ApolloServer } = require("apollo-server-express");
 // Import Middleware Function From Auth //
 const { authMiddleware } = require("./utils/auth");
+const routes = require("./routes/api");
 
 const path = require("path");
 
@@ -35,7 +36,7 @@ const startApolloServer = async (typeDefs, resolvers) => {
   if (process.env.NODE_ENV === "production") {
     app.use(express.static(path.join(__dirname, "../client/build")));
   }
-
+  app.use(routes);
   app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "../client/build/index.html"));
   });
