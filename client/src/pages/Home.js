@@ -2,7 +2,7 @@ import React from 'react';
 import { useQuery } from '@apollo/client';
 import { QUERY_MOVIES } from '../utils/queries';
 import MovieList from '../components/MovieList';
-import { CardSwiper } from "react-card-rotate-swiper";
+import { CardSwiper } from "react-card-rotate-swiper";  
 
 //Home Page//
 const Home = () => {
@@ -17,7 +17,7 @@ const Home = () => {
   const { loading, data } = useQuery(QUERY_MOVIES);
   //get the movie data out of the query's response//
   const movies = data?.movies || [];
-console.log(movies);
+  console.log(movies);
 
   return (
     <main>

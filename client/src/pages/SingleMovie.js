@@ -4,7 +4,7 @@ import { useQuery } from '@apollo/client';
 import { QUERY_MOVIES } from '../utils/queries';
 
 const SingleMovie = props => {
-  const { id: movieId } = useParams();
+const { id: movieId } = useParams();
 
 const { loading, data } = useQuery(QUERY_MOVIES);
 

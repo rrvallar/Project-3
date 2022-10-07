@@ -1,9 +1,9 @@
 import React from 'react';
 
 const MovieList = ({ movies, title }) => {
-  // if (!movies.length) {
-  //   return <h3>No Thoughts Yet</h3>;
-  // }
+  if (!movies.length) {
+    return <h3>No Thoughts Yet</h3>;
+  }
 
   return (
     <div>

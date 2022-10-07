@@ -6,14 +6,12 @@ function Nav() {
     <header>
       <nav>
         <ul className="flex-row">
-          {/* ----------Profile navbar section start------------------ */}
-          <li className="mx-2 "><a href="./">Profile</a></li>
           {/* ----------- Browse navbar section start --------------- */}
-          <li className="mx-2"><a href="./">Home</a></li>
-          {/* ------------------ Landing navbar section start -------------- */}
-          {/* <li className="mx-2 navLink">
-              Home
-          </li> */}
+          <li className="mx-2"><a href="./Home">Home</a></li>
+          {/* ----------Profile navbar section start------------------ */}
+          <li className="mx-2 "><a href="./Profile">Profile</a></li>
+          {/* ----------Login navbar section start------------------ */}
+          <li className="mx-2 "><a href="./Login">Login</a></li>
         </ul>
       </nav>
     </header>
