@@ -57,6 +57,7 @@ const Signup = () => {
               </button>
             </form>
           </div>
+          <p>Have an account?<br></br><a href='./Login'>Login Here</a></p>
         </div>
       </div>
     </main>
