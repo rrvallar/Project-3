@@ -138,11 +138,12 @@ header nav ul li {
 
 /* CARDS */
 .card {
-  margin: 0 0 20px 0;
+  margin: 0 350px 20px 350px;
   border: 3px solid var(--dark);
   border-radius: var(--border-radius);
   background-color: var(--light);
   color: var(--dark);
+  display: flex;
 }
 
 .card-header {
