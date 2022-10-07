@@ -1,26 +1,35 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
+import { useQuery } from '@apollo/client';
+import { QUERY_MOVIES } from '../../utils/queries';
 
-const MovieList = ({ movies, title }) => {
-  if (!movies.length) {
-    return <h3>No Thoughts Yet</h3>;
-  }
+const MovieList = props => {
+ const { loading, data } = useQuery(QUERY_MOVIES);
 
+const movies = data?.movie || {};
+console.log(movies)
+if (loading) {
+  return <div>Loading...</div>;
+}
+  //Shows movies on page//
   return (
     <div>
-      <h3>{title}</h3>
-      {movies &&
-        movies.map(movie => (
-          <div key={movie._id} className="card mb-3">
-            <p className="card-header">
-              {movie.username}
-              liked {movie.createdAt}
-            </p>
-            <div className="card-body">
-              <p>{movie.movieTitle}</p>
-            </div>
-          </div>
-        ))}
+    <div className="card mb-3">
+      <p className="card-header">
+        {loading===false?(movies.map(movie => <div>
+          <span style={{ fontWeight: 700 }} className="text-light">
+          {movie.username}
+        </span>{' '}
+        liked on {movie.createdAt}
+        <div className="card-body">
+        <p>{movie.movieTitle}</p>
+      </div>
+        </div>)):""}
+        
+      </p>
+      
     </div>
+  </div>
   );
 };
 

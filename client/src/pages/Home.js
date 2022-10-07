@@ -18,7 +18,7 @@ console.log(movies);
       {loading ? (
         <div>Loading...</div>
       ) : (
-        <MovieList movies={movies} title="Some Feed for Thought(s)..." />
+        <MovieList movies={movies} title="Some Movies You Might Like..." />
       )}
     </div>
   </div>
