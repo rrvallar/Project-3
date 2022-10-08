@@ -2,8 +2,11 @@ import React from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
+import { useState } from 'react'
+import { useEffect } from 'react'
 import { setContext } from '@apollo/client/link/context';
-
+import "bootstrap/dist/css/bootstrap.min.css"
+import "./index.css"
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './pages/Login';
@@ -11,6 +14,7 @@ import NoMatch from './pages/NoMatch';
 import SingleMovie from './pages/SingleMovie';
 import Profile from './pages/Profile';
 import Signup from './pages/Signup';
+import MovieList from "./components/MovieList"
 
 //establish a new link to the GraphQL server//
 const httpLink = createHttpLink({
@@ -33,6 +37,25 @@ const client = new ApolloClient({
 });
 
 function App() {
+  const [movies, setMovies] = useState([
+  ]);
+// Searches for movie request using api //
+const getMovieRequest = async() => {
+  const url = "http://www.omdbapi.com/?s=pokemon&apikey=3e4e8c6f"
+// Fetches response and turns it into json  //
+  const response = await fetch(url);
+  const responseJson = await response.json();
+  console.log(responseJson);
+  // Arrays name is 'Search' for returning movies //
+  setMovies(responseJson.Search)
+};
+// getMovieRequest actual functionality //
+useEffect(() =>{
+  getMovieRequest();
+  // Movie request loads objects of movies inside the [] //
+}, []);
+
+
   return (
     <ApolloProvider client={client}>
       <Router>
@@ -40,6 +63,10 @@ function App() {
           <Header />
           <div className="container">
             <Routes>
+              <Route
+                path="/movieList"
+                element={<MovieList movies={movies} />}
+             />
               <Route
                 path="/"
                 element={<Home />}
