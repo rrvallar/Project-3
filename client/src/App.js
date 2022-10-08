@@ -38,8 +38,8 @@ const client = new ApolloClient({
 });
 
 function App() {
-  const [movies, setMovies] = useState([
-  ]);
+  const [movies, setMovies] = useState([]);
+    
 // Searches for movie request using api //
 const getMovieRequest = async() => {
   const url = "http://www.omdbapi.com/?s=pokemon&apikey=3e4e8c6f"

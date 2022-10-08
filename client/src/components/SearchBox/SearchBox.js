@@ -1,9 +1,15 @@
 import React from 'react';
+import { useState } from "react"
+import App from "react"
 
 const SearchBox = (props) => {
     return (
         <div className="col col-sm-4">
-            <input className="form-control" placeholder="Type To Search!">
+            <input 
+            className="form-control" 
+            value={props.value}
+            onChange={(event) => props.setSearchValue(event.target.value)}
+            placeholder="Type To Search!">
             </input>
         </div>
     )
