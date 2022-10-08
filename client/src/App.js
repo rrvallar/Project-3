@@ -14,7 +14,8 @@ import NoMatch from './pages/NoMatch';
 import SingleMovie from './pages/SingleMovie';
 import Profile from './pages/Profile';
 import Signup from './pages/Signup';
-import MovieList from "./components/MovieList"
+import MovieList from "./pages/MovieList"
+
 
 //establish a new link to the GraphQL server//
 const httpLink = createHttpLink({

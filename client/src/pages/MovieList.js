@@ -1,5 +1,6 @@
 import React from 'react';
-import MovieListHeading from '../MovieListHeading/MovieListHeading'
+import MovieListHeading from '../components/MovieListHeading/MovieListHeading'
+import SearchBox from '../components/SearchBox/SearchBox';
 
 
 // Function component returns list of movies as props/renders div/img poster//
@@ -7,6 +8,7 @@ const MovieList = (props) => {
     return (
       <>
       <MovieListHeading heading="Movies"/>
+      <SearchBox/>
       <div className="row">
       <div className="row">
          {/* Props for movies  */}

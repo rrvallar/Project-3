@@ -1,7 +1,7 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
 import { QUERY_MOVIES } from '../utils/queries';
-import MovieList from '../components/MovieList';
+import MovieList from '../pages/MovieList';
 
 //Home Page//
 const Home = () => {

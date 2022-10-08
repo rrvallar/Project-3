@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 
-import MovieList from '../components/MovieList';
+
 
 import { useQuery } from '@apollo/client';
 import { QUERY_USER } from '../utils/queries';
@@ -29,7 +29,7 @@ const Profile = () => {
 
       <div className="flex-row justify-space-between mb-3">
         <div className="col-12 mb-3 col-lg-8">
-          <MovieList thoughts={user.movies} title={`${user.username}'s thoughts...`} />
+
         </div>
       </div>
     </div>
