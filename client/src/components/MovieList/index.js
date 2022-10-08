@@ -2,21 +2,21 @@ import React from 'react';
 import { CardSwiper } from "react-card-rotate-swiper"; 
 
 const MovieList = ({ movies, title }) => {
+
+  // const [index, setIndex] = useState(0);
+
+    // const current = movies[index];
+
   if (!movies.length) {
     return <h3>No Thoughts Yet</h3>;
   }
 
-  // const newMovie = () => {
-    
-  // }
-
   const handleSwipe = (swipe) => {
+    // setIndex(index + 1);
     if (swipe === 'left') {
       console.log("Not Interested")
-      // newMovie()
     } else {
       console.log('Lets Watch')
-      // newMovie()
     };
   };
 
@@ -29,15 +29,11 @@ const MovieList = ({ movies, title }) => {
           onSwipe={handleSwipe}
           className={"swiper"}
           contents={
-              <div key={movie._id} className="card mb-3">
-                {/* <p className="card-header">
-                  {movie.username}
-                  liked {movie.createdAt}
-                </p> */}
-                <div className="card-body">
-                  <p>{movie.movieTitle}</p>
+                <div key={movie._id} className="card mb-3">
+                  <div className="card-body">
+                    <p>{movie.movieTitle}</p>
+                  </div>
                 </div>
-              </div>
             }/>
         ))}
     </div>
