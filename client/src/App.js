@@ -11,6 +11,7 @@ import NoMatch from './pages/NoMatch';
 import SingleMovie from './pages/SingleMovie';
 import Profile from './pages/Profile';
 import Signup from './pages/Signup';
+import Browse from './pages/Browse';
 
 //establish a new link to the GraphQL server//
 const httpLink = createHttpLink({
@@ -55,6 +56,10 @@ function App() {
               <Route
                 path="/profile"
                 element={<Profile />}
+              />
+              <Route
+                path="/browse"
+                element={<Browse />}
               />
               <Route
                 path="/movie"
