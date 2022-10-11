@@ -10,6 +10,8 @@ function Nav() {
           <li className="mx-2"><a href="./">Home</a></li>
           {/* ----------Profile navbar section start------------------ */}
           <li className="mx-2 "><a href="./Profile">Profile</a></li>
+          {/* ----------Liked navbar section start------------------ */}
+          <li className="mx-2 "><a href="./Liked">Liked</a></li>
           {/* ----------Login navbar section start------------------ */}
           <li className="mx-2 "><a href="./Login">Login</a></li>
         </ul>

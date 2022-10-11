@@ -1,4 +1,4 @@
-require("dotenv").config();
+require('dotenv').config();
 const express = require("express");
 // import ApolloServer
 const { ApolloServer } = require("apollo-server-express");
