@@ -9,6 +9,7 @@ import Login from './pages/Login';
 import NoMatch from './pages/NoMatch';
 import Profile from './pages/Profile';
 import Signup from './pages/Signup';
+import Browse from './pages/Browse';
 import Home from './pages/Home';
 
 //establish a new link to the GraphQL server//
@@ -54,6 +55,14 @@ function App() {
               <Route
                 path="/profile"
                 element={<Profile />}
+              />
+              <Route
+                path="/browse"
+                element={<Browse />}
+              />
+              <Route
+                path="/movie"
+                element={<SingleMovie />}
               />
             </Routes>
           </div>

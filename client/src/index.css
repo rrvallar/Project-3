@@ -138,17 +138,19 @@ header nav ul li {
 
 /* CARDS */
 .card {
-  flex: .45;
-  width: 500px;
-  height: 300px;
-  margin: 0 350px 20px 350px;
   border: 3px solid var(--dark);
   border-radius: var(--border-radius);
-  box-shadow: 25;
   justify-content: center;
   align-items: center;
   background-color: var(--light);
   color: var(--dark);
+}
+
+.movie-card {
+  flex: .45;
+  width: 500px;
+  height: 300px;
+  margin: 30px 350px 0 350px;
   display: flex;
   position: absolute;
 }

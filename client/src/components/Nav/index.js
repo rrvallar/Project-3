@@ -6,8 +6,10 @@ function Nav() {
     <header>
       <nav>
         <ul className="flex-row">
-          {/* ----------- Browse navbar section start --------------- */}
+          {/* ----------- Homenavbar section start --------------- */}
           <li className="mx-2"><a href="./">Home</a></li>
+          {/* ----------- Browse navbar section start --------------- */}
+          <li className="mx-2"><a href="./Browse">Browse</a></li>
           {/* ----------Profile navbar section start------------------ */}
           <li className="mx-2 "><a href="./Profile">Profile</a></li>
           {/* ----------Login navbar section start------------------ */}
