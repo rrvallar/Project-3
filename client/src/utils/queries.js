@@ -5,6 +5,7 @@ query Movies {
   movies {
     _id
     movieTitle
+    moviePoster
     createdAt
     username
   }
@@ -16,15 +17,9 @@ export const QUERY_MOVIE = gql`
     movie(_id: $id) {
       _id
       movieTitle
+      moviePoster
       createdAt
       username
-      reactionCount
-      reactions {
-        _id
-        createdAt
-        username
-        reactionBody
-      }
     }
   }
 `;

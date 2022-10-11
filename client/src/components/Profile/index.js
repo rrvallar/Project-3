@@ -1,4 +1,6 @@
 import React from "react";
+import SingleMovie from '../SingleMovie'
+
 
 // --- Function for rendering Profile components --- //
 function Profile() {
@@ -11,8 +13,9 @@ function Profile() {
       {/* ---- Profile Section End ---- */}
       {/* ---- Saved Movie Section Start ---- */}
       <h1>Movies Saved</h1>
-      <div>Movie</div>
-      <div>Movie</div>
+      <div><SingleMovie/></div>
+    
+      
       {/* ---- Saved Movie Section End ---- */}
     </section>
   );

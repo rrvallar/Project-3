@@ -10,6 +10,12 @@ const movieSchema = new Schema(
       minlength: 1,
       maxlength: 280
     },
+    moviePoster: {
+      type: String,
+      required: 'You need to leave a thought!',
+      minlength: 1,
+      maxlength: 280
+    },
     createdAt: {
       type: Date,
       default: Date.now,

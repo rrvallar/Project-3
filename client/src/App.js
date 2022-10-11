@@ -10,6 +10,8 @@ import NoMatch from './pages/NoMatch';
 import Profile from './pages/Profile';
 import Signup from './pages/Signup';
 import Home from './pages/Home';
+import MovieListPage from './pages/MovieListPage'
+import SingleMovie from './pages/SingleMovie';
 
 //establish a new link to the GraphQL server//
 const httpLink = createHttpLink({
@@ -54,6 +56,14 @@ function App() {
               <Route
                 path="/profile"
                 element={<Profile />}
+              />
+              <Route
+                path="/movielistpage"
+                element={<MovieListPage />}
+              />
+              <Route 
+                path="/movie/:id" 
+                element={<SingleMovie />} 
               />
             </Routes>
           </div>
