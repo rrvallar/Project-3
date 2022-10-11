@@ -7,13 +7,11 @@ function Nav() {
       <nav>
         <ul className="flex-row">
           {/* ----------- Browse navbar section start --------------- */}
-          <li className="mx-2"><a href="./">Home</a></li>
+          <li className="mx-2"><a href="/">Home</a></li>
           {/* ----------Profile navbar section start------------------ */}
-          <li className="mx-2 "><a href="./Profile">Profile</a></li>
-          {/* ----------Liked navbar section start------------------ */}
-          <li className="mx-2 "><a href="./Liked">Liked</a></li>
+          <li className="mx-2 "><a href="/profile">Profile</a></li>
           {/* ----------Login navbar section start------------------ */}
-          <li className="mx-2 "><a href="./Login">Login</a></li>
+          <li className="mx-2 "><a href="/login">Login</a></li>
         </ul>
       </nav>
     </header>

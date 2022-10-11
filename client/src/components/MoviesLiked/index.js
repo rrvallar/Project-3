@@ -6,7 +6,7 @@ import React from 'react';
 const MoviesLiked = () => {
     return (
         <div>
-           
+          <p>Movies Liked</p> 
         </div>
     );
 };
