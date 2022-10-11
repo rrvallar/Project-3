@@ -1,12 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Gemunu Libre');
+@import url('https://fonts.googleapis.com/css?family=Audiowide');
 @import url('https://fonts.googleapis.com/css?family=Roboto Condensed');
 
 :root {
   --primary: #497573;
   --secondary: #01200F;
-  --tertiary: #104f55;
-  /* --quatrinary: #cadbda; */
-  --light: #e1f5f4;
+  --tertiary: #FFFEF2;
   --dark: #6c7575;
   --error: rgb(228, 46, 1);
   --border-radius: 0.3rem;
@@ -29,16 +27,33 @@ body {
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Inconsolata', monospace;
+  font-family: 'Roboto Condensed';
   font-weight: 400;
   line-height: 1.5;
   font-size: 20px;
-  color: var(--dark);
-  background-color: #DBE4EE;
+  color: var(--tertiary);
+  /* gradient-background */
+  background: linear-gradient(219deg,#15b9e0,#e59088,#6295aa,#2a7c7f);
+  background-size: 240% 240%;
+  animation: gradient-animation 8s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 h1 {
-  font-family: 'Gemunu Libre';
+  font-family: 'Audiowide';
+  color: #2a7c7f;
+  font-size: 2.25rem;
 }
 
 h2,
@@ -50,10 +65,6 @@ h6 {
   font-weight: 700;
   margin: 5px 0;
   line-height: 1.25;
-}
-
-h1 {
-  font-size: 2.25rem;
 }
 
 h2 {
@@ -70,6 +81,7 @@ h4 {
 
 h5 {
   font-size: 1.25rem;
+  color: #2a7c7f;
 }
 
 h6 {
@@ -104,13 +116,6 @@ nav a {
 nav a:hover {
   color: var(--secondary);
   background-color: var(--dark);
-}
-
-.page-title {
-  text-align: center;
-  width: 100%;
-  margin: 0;
-  font-size: 2.5rem;
 }
 
 .btn,
