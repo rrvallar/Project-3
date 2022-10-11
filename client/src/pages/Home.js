@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../index.css"
-import MovieListHeading from "../components/MovieListHeading"
+import "../index.css";
+import MovieListHeading from "../components/MovieListHeading";
 import Swipe from "../components/TinderSwipe";
 
 //Random number generated to pick movie from list below//
@@ -3016,11 +3016,11 @@ const Home = () => {
       setMovies(responseJson.Search.slice(0, 1));
     }
   };
-
 // Runs function about with inputed api info //
-useEffect(() => {
-  getMovieRequest(movieName[numberRandom].Movie_Name);
-}, []);
+  useEffect(() => {
+    getMovieRequest(movieName[numberRandom].Movie_Name);
+  }, []);
+
   
 
 // Return the generated info onto the page //
@@ -3039,4 +3039,4 @@ useEffect(() => {
   );
 };
 
-export default Home
+export default Home;

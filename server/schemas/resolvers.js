@@ -10,8 +10,8 @@ const resolvers = {
       if (context.user) {
         const userData = await User.findOne({ _id: context.user._id })
           .select("-__v -password")
-          .populate("savedMovie");
-        // .populate('friends');
+          .populate("savedMovie")
+          .populate('friends');
         return userData;
       }
 
@@ -26,8 +26,8 @@ const resolvers = {
     user: async (parent, { username }) => {
       return User.findOne({ username })
         .select("-__v -password")
-        .populate("savedMovie");
-      // .populate('thoughts');
+        .populate("savedMovie")
+        .populate('thoughts');
     },
     //Get All Movies//
     movies: async (parent, { username }) => {

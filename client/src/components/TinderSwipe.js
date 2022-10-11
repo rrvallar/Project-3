@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import TinderCard from "react-tinder-card";
 
 // 'Simple Function' reloads page on swipe //
-const Simple = (props) => {
+const Swipe = (props) => {
   function refreshPage() {
     window.location.reload(false);
   }
@@ -102,12 +102,12 @@ const Simple = (props) => {
       </div>
       {/* Poster Image End */}
       {lastDirection ? (
-        <h2 className="infoText">{lastDirection}</h2>
+        <h2 className="infoText">You swiped {lastDirection}</h2>
       ) : (
-        <h2 className="infoText">{lastDirection}</h2>
+        <h2 className="infoText" />
       )}
     </div>
   );
 };
 
-export default Simple;
+export default Swipe;
