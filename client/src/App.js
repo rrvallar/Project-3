@@ -7,8 +7,7 @@ import { setContext } from '@apollo/client/link/context';
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './pages/Login';
-import NoMatch from './pages/NoMatch';
-import SingleMovie from './pages/SingleMovie';
+// import NoMatch from './pages/NoMatch';
 import Profile from './pages/Profile';
 import Signup from './pages/Signup';
 
@@ -41,7 +40,7 @@ function App() {
           <div className="container">
             <Routes>
               <Route
-                path="/"
+                path="/Home"
                 element={<Home />}
               />
               <Route
@@ -55,10 +54,6 @@ function App() {
               <Route
                 path="/profile"
                 element={<Profile />}
-              />
-              <Route
-                path="/movie"
-                element={<SingleMovie />}
               />
             </Routes>
           </div>
