@@ -1,17 +1,33 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(
+import React from 'react';
+
+// import ReactDOM from 'react-dom/client'; <- This import is only for React version 18
+
+import { render } from 'react-dom'; // <- This is the correct import // statement for React version 17
+
+import './index.css';
+
+
+
+
+
+// const root = //ReactDOM.createRoot(document.getElementById('root'));
+
+const root = document.getElementById('root'); // <- This is the //correct method call for React version 17
+
+render(
+
   <React.StrictMode>
+
     <App />
+
   </React.StrictMode>,
-  document.getElementById('root')
+
+  root
+
 );
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.register();
+
