@@ -118,8 +118,16 @@ ul {
 }
 
 a {
+  color: var(--primary);
+  text-decoration: none !important;
   display: block;
   padding: 10px;
+}
+
+a:hover {
+  color: #e59088; 
+  text-decoration:none; 
+  cursor:pointer;  
 }
 
 button {
@@ -226,13 +234,6 @@ a {
   align-items: center;
 }
 
-.card-header {
-  color: var(--secondary);
-  margin: 0;
-  background-color: var(--dark);
-  padding: 0.625rem;
-  border-radius: calc(0.18rem - 1px) calc(0.18rem - 1px) 0 0;
-}
 
 .card-body {
   padding: 2.5%;
