@@ -27,8 +27,8 @@ const Login = (props) => {
   return (
     <main className='flex-row justify-center mb-4'>
       <div className='col-12 col-md-6'>
-        <div className='card'>
-          <h4 className='card-header'>Login</h4>
+        <div className='card bg-tertiary'>
+          <h5 className='mx-4'>Login</h5>
           <div className='card-body'>
             <form onSubmit={handleFormSubmit}>
               <input

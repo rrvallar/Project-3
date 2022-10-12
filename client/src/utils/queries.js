@@ -18,7 +18,13 @@ export const QUERY_MOVIE = gql`
       movieTitle
       createdAt
       username
-      
+      reactionCount
+      reactions {
+        _id
+        createdAt
+        username
+        reactionBody
+      }
     }
   }
 `;
@@ -35,10 +41,10 @@ export const QUERY_ME = gql`
         movieTitle
         moviePoster
         createdAt
+      }
       friends {
         _id
         username
-      }
       }
     }
   }

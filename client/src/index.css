@@ -1,9 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Audiowide');
+@import url('https://fonts.googleapis.com/css?family=Roboto Condensed');
+
 :root {
-  --primary: #497573;
-  --secondary: #99f7f2;
-  --tertiary: #b2c2c1;
-  --quatrinary: #cadbda;
-  --light: #e1f5f4;
+  --primary: #15b9e0;
+  --secondary: #6295aa;
+  --tertiary: #FFFEF2;
   --dark: #6c7575;
   --error: rgb(228, 46, 1);
   --border-radius: 0.3rem;
@@ -23,31 +24,52 @@ body {
   min-height: 100%;
 }
 
+header {
+  height: 90px;
+}
+
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Inconsolata', monospace;
+  font-family: 'Roboto Condensed';
   font-weight: 400;
   line-height: 1.5;
   font-size: 20px;
-  color: var(--dark);
-  background-color: #f3fffee1;
+  color: var(--tertiary);
+  /* gradient-background */
+  background: linear-gradient(219deg,#15b9e0,#e59088,#6295aa,#2a7c7f);
+  background-size: 240% 240%;
+  animation: gradient-animation 8s ease infinite;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: 'Karla', sans-serif;
-  font-weight: 700;
-  margin: 5px 0;
-  line-height: 1.25;
+/* background animation */
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 h1 {
+  font-family: 'Audiowide';
+  color: var(--primary);
   font-size: 2.25rem;
+}
+
+h2,
+h3,
+h4,
+h6 {
+  font-family: 'Roboto Condensed';
+  font-weight: 700;
+  margin: 5px 0;
+  line-height: 1.25;
+  color: var(--tertiary);
 }
 
 h2 {
@@ -63,57 +85,43 @@ h4 {
 }
 
 h5 {
-  font-size: 1.25rem;
+  font-size: 1.50rem;
+  color: var(--primary);
+  font-family: 'Audiowide';
+  font-weight: 700;
+  margin: 5px 0;
+  line-height: 1.25;
 }
 
 h6 {
   font-size: 1rem;
+  font-family: 'Roboto Condensed';
+  font-weight: 700;
+  margin: 5px 0;
+  line-height: 1.25;
 }
 
 p {
   font-size: 1.1rem;
-  margin-top: 0;
+  margin: 0;
+  color: #2a7c7f;
+  padding-top: 20;
+}
+
+ul {
+  list-style-type: none;
+  margin-top: 20;
+  padding: 0;
+  font-size: 1.5rem;
+  color: var(--primary)
 }
 
 a {
-  color: var(--dark);
-  text-decoration: none;
+  display: block;
+  padding: 10px;
 }
 
-a:visited {
-  color: inherit;
-}
-
-nav {
-  width: 100%;
-  justify-content: center;
-}
-
-nav a {
-  padding: 6px 10px;
-  margin: 0 15px;
-  transition: all 0.2s;
-}
-
-nav a:hover {
-  color: var(--secondary);
-  background-color: var(--dark);
-}
-
-header nav ul li {
-  text-decoration: none;
-  list-style: none;
-}
-
-.page-title {
-  text-align: center;
-  width: 100%;
-  margin: 0;
-  font-size: 2.5rem;
-}
-
-.btn,
-.pill {
+.btn {
   font-size: 1.3rem;
   text-decoration: none;
   padding: 0.5rem 1.2rem;
@@ -126,8 +134,7 @@ header nav ul li {
   transition: all 0.5s;
 }
 
-.btn:hover,
-.pill:hover {
+.btn:hover {
   color: var(--secondary);
   background-color: var(--dark);
 }
@@ -136,27 +143,26 @@ header nav ul li {
   display: inline;
 }
 
+a {
+  color: var(--primary);
+  text-decoration: none;
+ }
+  
+ a:visited {
+  color: inherit;
+ } 
+
 /* CARDS */
 .card {
-  flex: .45;
-  width: 500px;
-  height: 300px;
-  margin: 0 350px 20px 350px;
+  margin: 0 0 20px 0;
   border: 3px solid var(--dark);
   border-radius: var(--border-radius);
-  box-shadow: 25;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--light);
-  color: var(--dark);
-  display: flex;
-  position: absolute;
 }
 
 .card-header {
-  color: var(--secondary);
+  color: var(--primary);
   margin: 0;
-  background-color: var(--dark);
+  background-color: var(--tertiary);
   padding: 0.625rem;
   border-radius: calc(0.18rem - 1px) calc(0.18rem - 1px) 0 0;
 }
@@ -164,97 +170,6 @@ header nav ul li {
 .card-body {
   padding: 2.5%;
   font-size: 1.4rem;
-}
-
-/* CARD SWIPING CAROUSEL */
-.carousel {
-  margin: 30px 400px;
-  padding: 30px 0;
-}
-
-.card {
-  background-color:bisque;
-  padding: 30px 0; 
-}
-
-.card p {
-  text-align: center;
-}
-
-
-/* FORM */
-.form-label,
-.form-input,
-.form-textarea {
-  display: block;
-}
-
-.form-label {
-  font-size: 1.2rem;
-  margin: 0.625rem 0 0.25rem;
-}
-
-.form-input {
-  width: 100%;
-  padding: 0.75rem;
-  margin: 0.2rem 0;
-  font-size: 1.2rem;
-  border: 2px solid var(--dark);
-  border-radius: var(--border-radius);
-}
-
-[type='radio']:checked,
-[type='radio']:not(:checked) {
-  position: absolute;
-  left: -9999px;
-}
-[type='radio']:checked + label,
-[type='radio']:not(:checked) + label {
-  position: relative;
-  padding-left: 25px;
-  cursor: pointer;
-  line-height: 20px;
-  display: inline-block;
-  color: var(--secondary);
-  margin-right: 0.2rem;
-}
-
-[type='radio']:checked + label:before,
-[type='radio']:not(:checked) + label:before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 18px;
-  height: 18px;
-  border: 2px solid var(--secondary);
-  border-radius: 100%;
-  background: #fff;
-}
-[type='radio']:checked + label:after,
-[type='radio']:not(:checked) + label:after {
-  content: '';
-  width: 12px;
-  height: 12px;
-  background-color: var(--secondary);
-  position: absolute;
-  top: 5px;
-  left: 5px;
-  border-radius: 100%;
-  -webkit-transition: all 0.2s ease;
-  transition: all 0.2s ease;
-}
-
-[type='radio']:not(:checked) + label:after {
-  opacity: 0;
-  -webkit-transform: scale(0);
-  transform: scale(0);
-}
-
-[type='radio']:checked + label:after {
-  opacity: 1;
-  -webkit-transform: scale(1);
-  transform: scale(1);
 }
 
 /* LAYOUT */
@@ -313,40 +228,11 @@ header nav ul li {
 
 /* MARGIN/PADDING UTILS */
 
-/* Margin - all sides */
-.m-0 {
-  margin: 0;
-}
-
-.m-1 {
-  margin: var(--spacing-one);
-}
-
-.m-2 {
-  margin: var(--spacing-two);
-}
-
-.m-3 {
-  margin: var(--spacing-three);
-}
-
-.m-4 {
-  margin: var(--spacing-four);
-}
-
-.m-5 {
-  margin: var(--spacing-five);
-}
-
 .m-auto {
   margin: auto;
 }
 
 /* Margin-bottom */
-
-.mb-0 {
-  margin-bottom: 0;
-}
 
 .mb-1 {
   margin-bottom: var(--spacing-one);
@@ -487,6 +373,7 @@ header nav ul li {
 .mx-4 {
   margin-right: var(--spacing-four);
   margin-left: var(--spacing-four);
+  margin-top: var(--spacing-four);
 }
 
 .mx-5 {

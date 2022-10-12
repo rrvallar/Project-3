@@ -1,16 +1,12 @@
 const { Schema, model } = require('mongoose');
-// const reactionSchema = require('./Reaction');
+const reactionSchema = require('./Reaction');
 const dateFormat = require('../utils/dateFormat');
 
 const movieSchema = new Schema(
   {
     movieTitle: {
       type: String,
-      minlength: 1,
-      maxlength: 280
-    },
-    moviePoster: {
-      type: String,
+      required: 'You need to leave a thought!',
       minlength: 1,
       maxlength: 280
     },
@@ -23,6 +19,7 @@ const movieSchema = new Schema(
       type: String,
       required: true
     },
+    reactions: [reactionSchema]
   },
   {
     toJSON: {

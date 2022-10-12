@@ -6,12 +6,11 @@ import { setContext } from '@apollo/client/link/context';
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './pages/Login';
-// import NoMatch from './pages/NoMatch';
+import NoMatch from './pages/NoMatch';
 import Profile from './pages/Profile';
 import Signup from './pages/Signup';
+import Browse from './pages/Browse';
 import Home from './pages/Home';
-import MovieListPage from './pages/MovieListPage'
-import SingleMovie from './pages/SingleMovie';
 
 //establish a new link to the GraphQL server//
 const httpLink = createHttpLink({
@@ -58,12 +57,12 @@ function App() {
                 element={<Profile />}
               />
               <Route
-                path="/movielistpage"
-                element={<MovieListPage />}
+                path="/browse"
+                element={<Browse />}
               />
-              <Route 
-                path="/movie/:id" 
-                element={<SingleMovie />} 
+              <Route
+                path="/movie"
+                // element={<SingleMovie />}
               />
             </Routes>
           </div>
@@ -75,4 +74,3 @@ function App() {
 }
 
 export default App;
-
