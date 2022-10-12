@@ -56,7 +56,7 @@ const Swipe = (props) => {
         </svg>
         {/* Arrow icon pointing left end*/}
         {/* Heading Text Over Cards: */}
-        If you'd watch it or if you wouldn't
+        <h4>If you'd watch it or if you wouldn't</h4>
         {/* Arrow Pointing Left Start */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
