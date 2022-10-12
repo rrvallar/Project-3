@@ -57,10 +57,6 @@ function App() {
                 element={<Profile />}
               />
               {/* <Route
-                path="/browse"
-                element={<Browse />}
-              /> */}
-              {/* <Route
                 path="/movie"
                 element={<SingleMovie />}
               /> */}

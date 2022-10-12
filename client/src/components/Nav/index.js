@@ -8,8 +8,6 @@ function Nav() {
         <ul className="flex-row">
           {/* ----------- Homenavbar section start --------------- */}
           <li className="mx-2"><a href="./">Home</a></li>
-          {/* ----------- Browse navbar section start --------------- */}
-          <li className="mx-2"><a href="./Browse">Browse</a></li>
           {/* ----------Profile navbar section start------------------ */}
           <li className="mx-2 "><a href="./Profile">Profile</a></li>
           {/* ----------Login navbar section start------------------ */}
