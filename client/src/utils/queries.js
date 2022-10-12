@@ -1,8 +1,8 @@
 import { gql } from '@apollo/client';
 
 export const QUERY_MOVIES = gql`
-query Movies {
-  movies {
+query Movies($username: String) {
+  movies(username: $username) {
     _id
     movieTitle
     createdAt
@@ -28,3 +28,4 @@ export const QUERY_MOVIE = gql`
     }
   }
 `;
+
