@@ -8,7 +8,8 @@ const Swipe = (props) => {
     window.location.reload(false);
   }
 
-  const [lastDirection, setLastDirection] = useState();
+ 
+  // const [lastDirection, setLastDirection] = useState();
 
     const Swiped = (direction, nameToDelete) => {
       // console.log("removing: " + nameToDelete);
@@ -74,11 +75,6 @@ const Swipe = (props) => {
         ))}
       </div>
       {/* Poster Image End */}
-      {lastDirection ? (
-        <h2 className="infoText">You swiped {lastDirection}</h2>
-      ) : (
-        <h2 className="infoText" />
-      )}
     </div>
   );
 };
