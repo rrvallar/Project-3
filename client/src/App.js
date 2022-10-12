@@ -62,7 +62,7 @@ function App() {
               />
               <Route
                 path="/movie"
-                element={<SingleMovie />}
+                // element={<SingleMovie />}
               />
             </Routes>
           </div>
