@@ -23,9 +23,9 @@ To see the project in development mode, 'cd' into 'server' and enter 'npm run wa
 To build the project into a single folder/production mode, enter 'npm run build.'  This bundles everything together and optimizes performance so the files can be deployed.
 
 ## Usage
-![Swiping](https://github.com/rrvallar/Project-3/doc/swiper.png)
-![Header](https://github.com/rrvallar/Project-3/doc/header.png)
-![Profile](https://github.com/rrvallar/Project-3/doc/profile.png)
+![Swiping](https://github.com/rrvallar/Project-3/blob/main/doc/swiper.png)
+![Header](https://github.com/rrvallar/Project-3/blob/main/doc/header.png)
+![Login](https://github.com/rrvallar/Project-3/blob/main/doc/login.png)
 
 ## Questions 
 Contributors: OhDangBro, livmeierx, rrvallar, vivianarodriguez1712, kwax17
