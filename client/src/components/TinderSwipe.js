@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 // import TinderCard from '../react-tinder-card/index'
 import TinderCard from "react-tinder-card";
 import { ADD_MOVIE } from '../utils/mutations';
@@ -18,14 +18,14 @@ const Swipe = (props) => {
   const [addMovie] = useMutation(ADD_MOVIE);
 
   const handleSwipe = async (movie) => {
-    window.location.reload(false);
     try {
       await addMovie({
-        variables: { id: movie._id },
+        variables: { id: movie.movieTitle },
       });
     } catch (e) {
       console.error(e);
     }
+    window.location.reload(false);
   };
 
   //Movie Swiper Card  Start//
