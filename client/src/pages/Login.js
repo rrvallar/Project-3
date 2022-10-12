@@ -1,7 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import { useMutation } from "@apollo/client";
+import { LOGIN_USER } from "../utils/mutations";
+import auth from "../utils/auth";
 
 const Login = (props) => {
-  const [formState, setFormState] = useState({ email: '', password: '' });
+  const [formState, setFormState] = useState({ email: "", password: "" });
+  // create login object from calling mutation
+  const [login, { error }] = useMutation(LOGIN_USER);
 
   // update state based on form input changes
   const handleChange = (event) => {
@@ -17,11 +22,16 @@ const Login = (props) => {
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
-    // clear form values
-    setFormState({
-      email: '',
-      password: '',
-    });
+    try {
+      const { data } = await login({
+        variables: { ...formState },
+      });
+
+      // call login and check if username and password is mathced
+      auth.login(data.login.token);
+    } catch (e) {
+      console.error(e);
+    }
   };
 
   return (
@@ -32,20 +42,20 @@ const Login = (props) => {
           <div className='card-body'>
             <form onSubmit={handleFormSubmit}>
               <input
-                className='form-input'
-                placeholder='Your email'
-                name='email'
-                type='email'
-                id='email'
+                className="form-input"
+                placeholder="Your email"
+                name="email"
+                type="email"
+                id="email"
                 value={formState.email}
                 onChange={handleChange}
               />
               <input
-                className='form-input'
-                placeholder='******'
-                name='password'
-                type='password'
-                id='password'
+                className="form-input"
+                placeholder="******"
+                name="password"
+                type="password"
+                id="password"
                 value={formState.password}
                 onChange={handleChange}
               />
@@ -54,7 +64,12 @@ const Login = (props) => {
               </button>
             </form>
           </div>
-          <p>Don't have an account?<br></br><a href='./Signup'>Signup Instead</a></p>
+          <div className="login-link">
+            <p>
+              Don't have an account?<br></br>
+              <a href="./Signup">Signup Instead</a>
+            </p>
+          </div>
         </div>
       </div>
     </main>

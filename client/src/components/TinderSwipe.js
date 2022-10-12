@@ -1,24 +1,31 @@
-import React, { useState } from "react";
+import React from "react";
 // import TinderCard from '../react-tinder-card/index'
 import TinderCard from "react-tinder-card";
+import { ADD_MOVIE } from '../utils/mutations';
+import { useMutation } from '@apollo/client';
 
 // 'Simple Function' reloads page on swipe //
 const Swipe = (props) => {
-  function refreshPage() {
-    window.location.reload(false);
-  }
-
-  const [lastDirection, setLastDirection] = useState();
-
+  // function refreshPage() {
+  //   window.location.reload(false);
+  // };
   //   const Swiped = (direction, nameToDelete) => {
   //     console.log("removing: " + nameToDelete);
   //     setLastDirection(direction);
   //     console.log(direction);
   //   };
 
-  // console logs the name of movie and direction it went //
-  const outOfFrame = (name) => {
-    console.log(name + " left the screen!");
+  const [addMovie] = useMutation(ADD_MOVIE);
+
+  const handleSwipe = async (movie) => {
+    try {
+      await addMovie({
+        variables: { id: movie.movieTitle },
+      });
+    } catch (e) {
+      console.error(e);
+    }
+    window.location.reload(false);
   };
 
   //Movie Swiper Card  Start//
@@ -89,8 +96,7 @@ const Swipe = (props) => {
           <TinderCard
             className="swipe"
             key={movie.Title}
-            onSwipe={refreshPage}
-            onCardLeftScreen={() => outOfFrame(movie.title)}
+            onSwipe={ handleSwipe }
           >
             {/* inline styling in div for poster */}
             <div
@@ -107,11 +113,6 @@ const Swipe = (props) => {
         ))}
       </div>
       {/* Poster Image End */}
-      {lastDirection ? (
-        <h2 className="infoText">You swiped {lastDirection}</h2>
-      ) : (
-        <h2 className="infoText" />
-      )}
     </div>
   );
 };

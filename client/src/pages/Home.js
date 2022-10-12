@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../index.css";
-import MovieListHeading from "../components/MovieListHeading";
 import Swipe from "../components/TinderSwipe";
+import MovieListHeading from "../components/MovieListHeading";
 
 //Random number generated to pick movie from list below//
 const numberRandom = Math.floor(Math.random() * 500);
@@ -3030,7 +3030,6 @@ const Home = () => {
         {/* Header Text */}
         <MovieListHeading heading="" />
       </div>
-      <div className="row d-flex align-items-center mt-4 mb-4"></div>
       <div style={{ display: "flex", justifyContent: "center" }}>
         {/* Swipe shows movie poster on page*/}
         <Swipe movies={movies} />
