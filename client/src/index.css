@@ -148,21 +148,52 @@ a {
   text-decoration: none;
  }
   
- a:visited {
-  color: inherit;
- } 
+ .movie-card {
+  flex: .45;
+  width: 500px;
+  height: 300px;
+  margin: 30px 350px 0 350px;
+  display: flex;
+  position: absolute;
+}
 
-/* CARDS */
-.card {
-  margin: 0 0 20px 0;
-  border: 3px solid var(--dark);
-  border-radius: var(--border-radius);
+.movieSwiper {
+  align-items: center;
+  /* margin: auto; */
+}
+
+.swipe {
+  padding-bottom: 20pt;
+}
+
+.swipeHeader {
+  color: white;
+  margin-bottom: 30pt;
+  display: inline-flex;
+}
+
+.watch {
+  background-color: #497573;
+  padding: 30px;
+  border-radius: 25pt;
+  margin-left: 10pt;
+}
+
+.ignore {
+  background-color: maroon;
+  padding: 30px;
+  border-radius: 25pt;
+  margin-right: 10pt;
+}
+
+.swipe {
+  align-items: center;
 }
 
 .card-header {
-  color: var(--primary);
+  color: var(--secondary);
   margin: 0;
-  background-color: var(--tertiary);
+  background-color: var(--dark);
   padding: 0.625rem;
   border-radius: calc(0.18rem - 1px) calc(0.18rem - 1px) 0 0;
 }
@@ -170,6 +201,12 @@ a {
 .card-body {
   padding: 2.5%;
   font-size: 1.4rem;
+}
+
+/* CARD SWIPING CAROUSEL */
+.carousel {
+  margin: 30px 400px;
+  padding: 30px 0;
 }
 
 /* LAYOUT */
