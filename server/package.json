@@ -3,6 +3,7 @@
     "version": "1.0.0",
     "description": "",
     "main": "server.js",
+    "proxy": "http://localhost:3001/",
     "scripts": {
         "start": "node server.js",
         "watch": "nodemon",
@@ -12,11 +13,12 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "apollo-server-express": "^3.6.1",
+        "apollo-server-express": "^3.10.3",
         "bcrypt": "^4.0.1",
+        "dotenv": "^16.0.3",
         "express": "^4.17.2",
         "faker": "^4.1.0",
-        "graphql": "^16.2.0",
+        "graphql": "^16.6.0",
         "jsonwebtoken": "^8.5.1",
         "mongoose": "^6.6.5",
         "react-router-dom": "^6.4.2"

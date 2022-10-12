@@ -8,6 +8,7 @@ const MovieList = ({ movies, title }) => {
 
   return (
     <div>
+      <h2>movie list component</h2>
       <h3>{title}</h3>
       {movies &&
         movies.map(movie => (
@@ -16,7 +17,7 @@ const MovieList = ({ movies, title }) => {
               <Link
                 to={`/profile/${movie.username}`}
                 style={{ fontWeight: 700 }}
-                className="text-light"
+                
               >
                 {movie.username}
               </Link>{' '}

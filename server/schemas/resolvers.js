@@ -76,7 +76,6 @@ const resolvers = {
         //Finds User By ID & Adds Movie//
         await User.findByIdAndUpdate(
           { _id: context.user._id },
-          //movie changed to savedMovie//
           { $push: { savedMovie: movie._id } },
           { new: true }
         );

@@ -9,12 +9,13 @@ const MovieListPage = () => {
     const { loading, data } = useQuery(QUERY_MOVIES);
 //   const { data: userData } = useQuery(QUERY_ME_BASIC);
   const movies = data?.movies || [];
-  console.log(movies)
+  
   
 
   return (
     <main>
   <div className="flex-row justify-space-between">
+    <h2>this is movie list page</h2>
     <div className="col-12 mb-3">
       {loading ? (
         <div>Loading...</div>

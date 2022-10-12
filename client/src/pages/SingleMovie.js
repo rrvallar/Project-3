@@ -7,6 +7,7 @@ import { useParams } from 'react-router-dom';
 
 const SingleMovie = (props) => {
     const { id: movieId } = useParams();
+    
 
     const { loading, data } = useQuery(QUERY_MOVIE, {
       variables: { id: movieId }
@@ -23,10 +24,10 @@ const SingleMovie = (props) => {
     <div>
   <div className="card mb-3">
     <p className="card-header">
-      <span style={{ fontWeight: 700 }} className="text-light">
+      <span style={{ fontWeight: 700 }}>
         {movie.username}
       </span>{' '}
-      liked {movie.Title}
+      liked {movie.movieTitle}
     </p>
     <div className="card-body">
       <p>{movie.Poster}</p>
