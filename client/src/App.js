@@ -9,7 +9,7 @@ import Login from './pages/Login';
 // import NoMatch from './pages/NoMatch';
 import Profile from './pages/Profile';
 import Signup from './pages/Signup';
-import Browse from './pages/Browse';
+// import Browse from './pages/Browse';
 import Home from './pages/Home';
 
 //establish a new link to the GraphQL server//

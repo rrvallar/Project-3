@@ -23,7 +23,8 @@ const Swipe = (props) => {
 
   //Movie Swiper Card  Start//
   return (
-    <div>
+    <div className="movieSwiper">
+      <p className="instructions">Swipe right to save a movie to your library or swipe left to ignore it.</p>
         {/* Links for Swipe Card Start */}
       <link
         href="https://fonts.googleapis.com/css?family=Damion&display=swap"
@@ -57,10 +58,10 @@ const Swipe = (props) => {
           </svg>
           {/* Arrow icon pointing left end*/}
           {/* Heading Text Over Cards: */}
-          Nope 
+          Nope  
         </h1>
         <h1 className="watch">
-        Let's Watch!
+        Let's Watch! 
           {/* Arrow Pointing Left Start */}
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -96,9 +97,9 @@ const Swipe = (props) => {
               style={{
                 backgroundImage: "url(" + movie.Poster + ")", 
                 width: "400px",
-                height: "500px",
+                height: "550px",
                 backgroundSize: "cover",
-
+                margin: "auto"
               }}
               className="card"
             ></div>
