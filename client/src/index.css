@@ -155,6 +155,28 @@ header nav ul li {
   position: absolute;
 }
 
+.swipeHeader {
+  /* background-color: #497573; */
+  /* padding: 30px; */
+  color: white;
+  margin-bottom: 30pt;
+  display: inline-flex;
+}
+
+.watch {
+  background-color: #497573;
+  padding: 30px;
+  border-radius: 25pt;
+  margin-left: 10pt;
+}
+
+.ignore {
+  background-color: maroon;
+  padding: 30px;
+  border-radius: 25pt;
+  margin-right: 10pt;
+}
+
 .card-header {
   color: var(--secondary);
   margin: 0;

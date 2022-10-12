@@ -6,7 +6,7 @@ import { setContext } from '@apollo/client/link/context';
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './pages/Login';
-import NoMatch from './pages/NoMatch';
+// import NoMatch from './pages/NoMatch';
 import Profile from './pages/Profile';
 import Signup from './pages/Signup';
 import Browse from './pages/Browse';
@@ -56,14 +56,14 @@ function App() {
                 path="/profile"
                 element={<Profile />}
               />
-              <Route
+              {/* <Route
                 path="/browse"
                 element={<Browse />}
-              />
-              <Route
+              /> */}
+              {/* <Route
                 path="/movie"
                 element={<SingleMovie />}
-              />
+              /> */}
             </Routes>
           </div>
           <Footer />
