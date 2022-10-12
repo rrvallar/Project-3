@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../index.css";
-import MovieListHeading from "../components/MovieListHeading";
 import Swipe from "../components/TinderSwipe";
+import MovieListHeading from "../components/MovieListHeading";
 
 //Random number generated to pick movie from list below//
 const numberRandom = Math.floor(Math.random() * 500);

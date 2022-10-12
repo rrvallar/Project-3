@@ -159,6 +159,39 @@ a {
   border-radius: var(--border-radius);
 }
 
+.movieSwiper {
+  align-items: center;
+  /* margin: auto; */
+}
+
+.swipe {
+  padding-bottom: 20pt;
+}
+
+.swipeHeader {
+  color: white;
+  margin-bottom: 30pt;
+  display: inline-flex;
+}
+
+.watch {
+  background-color: #497573;
+  padding: 30px;
+  border-radius: 25pt;
+  margin-left: 10pt;
+}
+
+.ignore {
+  background-color: maroon;
+  padding: 30px;
+  border-radius: 25pt;
+  margin-right: 10pt;
+}
+
+.swipe {
+  align-items: center;
+}
+
 .card-header {
   color: var(--primary);
   margin: 0;
