@@ -188,6 +188,12 @@ a {
   margin-right: 10pt;
 }
 
+.instructions {
+  font-size: 15pt;
+  color: black;
+  font-weight: bold;
+}
+
 .swipe {
   align-items: center;
 }
@@ -203,6 +209,14 @@ a {
 .card-body {
   padding: 2.5%;
   font-size: 1.4rem;
+}
+
+.login-link {
+  text-align: center;
+}
+
+.prof-movies {
+  justify-content: center;
 }
 
 /* LAYOUT */
