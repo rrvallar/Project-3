@@ -9,6 +9,7 @@ const MovieListPage = () => {
     const { loading, data } = useQuery(QUERY_MOVIES);
 //   const { data: userData } = useQuery(QUERY_ME_BASIC);
   const movies = data?.movies || [];
+  console.log(movies)
   
 
   return (
@@ -18,7 +19,7 @@ const MovieListPage = () => {
       {loading ? (
         <div>Loading...</div>
       ) : (
-        <MovieList movies={movies} title="Some Movie(s)..." />
+        <MovieList movies={movies} title="Some Movies Recently Favorited By Users:" />
       )}
     </div>
   </div>

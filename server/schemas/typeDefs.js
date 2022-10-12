@@ -8,7 +8,8 @@ const typeDefs = gql`
     username: String
     email: String
     friendCount: Int
-    movies: [Movie]
+    /// movies was changed savedMovie ///
+    savedMovie: [Movie]
     friends: [User]
   }
 

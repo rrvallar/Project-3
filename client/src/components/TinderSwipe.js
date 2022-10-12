@@ -2,12 +2,16 @@ import React, { useState } from "react";
 // import TinderCard from '../react-tinder-card/index'
 import TinderCard from "react-tinder-card";
 
+import { useMutation } from '@apollo/client';
+import { ADD_MOVIE } from '../../utils/mutations';
+
+
 // 'Simple Function' reloads page on swipe //
 const Swipe = (props) => {
   function refreshPage() {
     window.location.reload(false);
   }
-
+  const [addMovie, { error }] = useMutation(ADD_MOVIE);
   const [lastDirection, setLastDirection] = useState();
 
   //   const Swiped = (direction, nameToDelete) => {

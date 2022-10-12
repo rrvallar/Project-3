@@ -13,6 +13,7 @@ const SingleMovie = (props) => {
     });
     
     const movie = data?.movie || {};
+    console.log(movie)
     
     if (loading) {
       return <div>Loading...</div>;
