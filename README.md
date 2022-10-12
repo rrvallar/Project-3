@@ -24,7 +24,6 @@ To build the project into a single folder/production mode, enter 'npm run build.
 
 ## Usage
 ![Swiping](https://github.com/rrvallar/Project-3/blob/main/doc/swiper.png)
-![Header](https://github.com/rrvallar/Project-3/blob/main/doc/header.png)
 ![Login](https://github.com/rrvallar/Project-3/blob/main/doc/login.png)
 
 ## Questions 
