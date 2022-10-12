@@ -113,13 +113,28 @@ ul {
   margin-top: 20;
   padding: 0;
   font-size: 1.5rem;
-  color: #15b9e0;
+  color: var(--secondary);
   text-decoration: none;
 }
 
 a {
   display: block;
   padding: 10px;
+}
+
+button {
+  background-color: var(--primary);
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:2;
 }
 
 .btn {
@@ -129,15 +144,14 @@ a {
   margin: 5px 0;
   border-radius: var(--border-radius);
   border: none;
-  color: var(--dark);
+  color: var(--tertiary);
   outline: none;
-  background-color: var(--secondary);
+  background-color: var(--primary);
   transition: all 0.5s;
 }
 
 .btn:hover {
-  color: var(--secondary);
-  background-color: #e59088;
+  color: #e59088;
 }
 
 .btn-inline {
@@ -145,7 +159,7 @@ a {
 }
 
 a {
-  color: var(--primary);
+  color: var(--tertiary);
   text-decoration: none;
  }
   
@@ -731,7 +745,7 @@ a {
 
 /* BACKGROUND UTILS */
 .bg-primary {
-  background-color: var(--primary);
+  background-color: #15b9e0;
 }
 
 .bg-secondary {
