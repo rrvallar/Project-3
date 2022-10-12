@@ -61,6 +61,10 @@ h1 {
   font-size: 2.25rem;
 }
 
+h2 {
+  font-size: 2rem;
+}
+
 h2,
 h3,
 h4,
@@ -70,10 +74,6 @@ h6 {
   margin: 5px 0;
   line-height: 1.25;
   color: var(--tertiary);
-}
-
-h2 {
-  font-size: 2rem;
 }
 
 h3 {
@@ -102,10 +102,10 @@ h6 {
 }
 
 p {
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   margin: 0;
-  color: #2a7c7f;
-  padding-top: 20;
+  color: var(--tertiary);
+  text-align: center;
 }
 
 ul {
@@ -113,7 +113,8 @@ ul {
   margin-top: 20;
   padding: 0;
   font-size: 1.5rem;
-  color: var(--primary)
+  color: #15b9e0;
+  text-decoration: none;
 }
 
 a {
@@ -136,7 +137,7 @@ a {
 
 .btn:hover {
   color: var(--secondary);
-  background-color: var(--dark);
+  background-color: #e59088;
 }
 
 .btn-inline {
@@ -173,14 +174,14 @@ a {
 }
 
 .watch {
-  background-color: #497573;
+  background-color: var(--tertiary);
   padding: 30px;
   border-radius: 25pt;
   margin-left: 10pt;
 }
 
 .ignore {
-  background-color: maroon;
+  background-color: #e59088;
   padding: 30px;
   border-radius: 25pt;
   margin-right: 10pt;
