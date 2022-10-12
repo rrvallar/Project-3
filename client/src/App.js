@@ -56,10 +56,6 @@ function App() {
                 path="/profile"
                 element={<Profile />}
               />
-              {/* <Route
-                path="/movie"
-                element={<SingleMovie />}
-              /> */}
             </Routes>
           </div>
           <Footer />
