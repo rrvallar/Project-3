@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 // import TinderCard from '../react-tinder-card/index'
 import TinderCard from "react-tinder-card";
 import { ADD_MOVIE } from '../utils/mutations';
@@ -14,10 +14,22 @@ const Swipe = (props) => {
   //     setLastDirection(direction);
   //     console.log(direction);
   //   };
+  
+
+
+  const onCardLeftScreen = (movie) => {
+    localStorage.setItem('likedMovie', movie);
+    alert("hi");
+  }
 
   const [addMovie] = useMutation(ADD_MOVIE);
 
   const handleSwipe = async (movie) => {
+    // if (movie == "right")
+    // {
+    //   console.log(movie.movieTitle);
+    // }
+
     try {
       await addMovie({
         variables: { id: movie.movieTitle },
@@ -25,7 +37,9 @@ const Swipe = (props) => {
     } catch (e) {
       console.error(e);
     }
+    
     window.location.reload(false);
+    
   };
 
   //Movie Swiper Card  Start//
@@ -96,7 +110,8 @@ const Swipe = (props) => {
           <TinderCard
             className="swipe"
             key={movie.Title}
-            onSwipe={ handleSwipe }
+            onSwipe={ () => handleSwipe() }
+            onCardLeftScreen = {() => onCardLeftScreen(movie)}
           >
             {/* inline styling in div for poster */}
             <div
