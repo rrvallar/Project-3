@@ -1,34 +1,27 @@
 import React from "react";
 // import TinderCard from '../react-tinder-card/index'
 import TinderCard from "react-tinder-card";
+// import { QUERY_ME } from '../utils/queries';
 import { ADD_MOVIE } from '../utils/mutations';
 import { useMutation } from '@apollo/client';
+// import { useParams } from 'react-router-dom';
 
 // 'Simple Function' reloads page on swipe //
 const Swipe = (props) => {
-  
- // function refreshPage() {
-  //   window.location.reload(false);
-  // };
-  //   const Swiped = (direction, nameToDelete) => {
-  //     console.log("removing: " + nameToDelete);
-  //     setLastDirection(direction);
-  //     console.log(direction);
-  //   };
-
-  const [addMovie] = useMutation(ADD_MOVIE);
+  const [addMovie] = useMutation(ADD_MOVIE)
 
   const handleSwipe = async (movie) => {
-    
+
     try {
       await addMovie({
-        variables: { movieTitle: movie.Title },
+        variables: { movieTitle: movie },
       });
     } catch (e) {
       console.error(e);
     }
-    
+    // console.log(movie);
     window.location.reload(false);
+    
   };
 
   //Movie Swiper Card  Start//
@@ -99,8 +92,8 @@ const Swipe = (props) => {
           <TinderCard
             className="swipe"
             key={movie.Title}
-            onSwipe={ handleSwipe  }
-
+            onSwipe={ () => handleSwipe(movie.Title) }
+            // onCardLeftScreen = {() => onCardLeftScreen(movie)}
           >
             {/* inline styling in div for poster */}
             <div

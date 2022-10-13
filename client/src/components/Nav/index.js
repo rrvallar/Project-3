@@ -25,9 +25,9 @@ function Nav() {
     <nav className="flex-row">
       {auth.loggedIn() ? (
         <>
+          <Link to="/">Home</Link>
           <Link to="/profile"> Profile </Link>
           <Link to="/" onClick={logout}>
-            
             {" "}
             Log out{" "}
           </Link>

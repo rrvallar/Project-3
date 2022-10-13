@@ -4,7 +4,6 @@ import "../index.css";
 import Swipe from "../components/TinderSwipe";
 import MovieListHeading from "../components/MovieListHeading";
 
-
 //Random number generated to pick movie from list below//
 const numberRandom = Math.floor(Math.random() * 500);
 
@@ -12,8 +11,8 @@ const numberRandom = Math.floor(Math.random() * 500);
 const Home = () => {
   // Set movies to empty state //
   const [movies, setMovies] = useState([]);
-  
-// Start List of possible movies //
+
+  // Start List of possible movies //
   const movieName = [
     {
       Link: "/Images/ironman.jpg",
@@ -3004,12 +3003,12 @@ const Home = () => {
       Year: "2019",
     },
   ];
-// End List of possible movies //
+  // End List of possible movies //
 
-//Function to take Movie_Name from list and pit it into API //
+  //Function to take Movie_Name from list and pit it into API //
   const getMovieRequest = async (searchValue) => {
     movieName.forEach((el, index) => {});
-    const url = `http://www.omdbapi.com/?s=${movieName[numberRandom].Movie_Name}&apikey=263d22d8`;
+    const url = `https://www.omdbapi.com/?s=${movieName[numberRandom].Movie_Name}&apikey=263d22d8`;
     const response = await fetch(url);
     const responseJson = await response.json();
     // Response is put into JSON format, sliced to only show first movie //
@@ -3017,14 +3016,12 @@ const Home = () => {
       setMovies(responseJson.Search.slice(0, 1));
     }
   };
-// Runs function about with inputed api info //
+  // Runs function about with inputed api info //
   useEffect(() => {
     getMovieRequest(movieName[numberRandom].Movie_Name);
   }, []);
 
-  
-
-// Return the generated info onto the page //
+  // Return the generated info onto the page //
   return (
     <div className="container movie-app ">
       <div className="row d-flex align-items-center mt-4 mb-4">
