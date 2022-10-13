@@ -6,17 +6,16 @@ import { setContext } from '@apollo/client/link/context';
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './pages/Login';
-import NoMatch from './pages/NoMatch';
+// import NoMatch from './pages/NoMatch';
 import Profile from './pages/Profile';
 import Signup from './pages/Signup';
-import Browse from './pages/Browse';
+// import Browse from './pages/Browse';
 import Home from './pages/Home';
 
 //establish a new link to the GraphQL server//
 const httpLink = createHttpLink({
   uri: '/graphql',
 });
-
 
 const authLink = setContext((_, { headers }) => {
   const token = localStorage.getItem('id_token');
@@ -56,14 +55,6 @@ function App() {
               <Route
                 path="/profile"
                 element={<Profile />}
-              />
-              <Route
-                path="/browse"
-                element={<Browse />}
-              />
-              <Route
-                path="/movie"
-                // element={<SingleMovie />}
               />
             </Routes>
           </div>

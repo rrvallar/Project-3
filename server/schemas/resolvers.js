@@ -1,6 +1,6 @@
 const { User, Movie } = require("../models");
 const { AuthenticationError } = require("apollo-server-express");
-const { signToken } = require('../utils/auth');
+const { signToken } = require("../utils/auth");
 
 // Resolvers Function Start//
 const resolvers = {
@@ -45,22 +45,24 @@ const resolvers = {
     addUser: async (parent, args) => {
       const user = await User.create(args);
       const token = signToken(user);
-    
+
       return { token, user };
     },
+    //Mutation for login//
     login: async (parent, { email, password }) => {
+      /// ---- Const searches for email ---///
       const user = await User.findOne({ email });
-    
+      /// ---- if email not found it throws error ---///
       if (!user) {
-        throw new AuthenticationError('Incorrect credentials');
+        throw new AuthenticationError("Incorrect credentials");
       }
-    
+      /// ---- Const searches for correct password ---///
       const correctPw = await user.isCorrectPassword(password);
-    
+
       if (!correctPw) {
-        throw new AuthenticationError('Incorrect credentials');
+        throw new AuthenticationError("Incorrect credentials");
       }
-    
+
       const token = signToken(user);
       return { token, user };
     },
@@ -74,7 +76,7 @@ const resolvers = {
         //Finds User By ID & Adds Movie//
         await User.findByIdAndUpdate(
           { _id: context.user._id },
-          { $push: { savedMovie: movie._id } },
+          { $push: { movies: movie._id } },
           { new: true }
         );
 

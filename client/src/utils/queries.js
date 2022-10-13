@@ -1,8 +1,8 @@
 import { gql } from '@apollo/client';
 
 export const QUERY_MOVIES = gql`
- query thoughts($username: String) {
-    thoughts(username: $username) {
+query Movies {
+  movies {
     _id
     movieTitle
     createdAt
@@ -18,41 +18,12 @@ export const QUERY_MOVIE = gql`
       movieTitle
       createdAt
       username
-    }
-  }
-`;
-
-export const QUERY_ME = gql`
-  {
-    me {
-      _id
-      username
-      email
-      friendCount
-      savedMovie {
+      reactionCount
+      reactions {
         _id
-        movieTitle
-        moviePoster
         createdAt
-      }
-      friends {
-        _id
         username
-      }
-    }
-  }
-`;
-
-export const QUERY_ME_BASIC = gql`
-  {
-    me {
-      _id
-      username
-      email
-      friendCount
-      friends {
-        _id
-        username
+        reactionBody
       }
     }
   }

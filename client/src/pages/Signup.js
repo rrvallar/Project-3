@@ -1,15 +1,17 @@
-import React, { useState } from 'react';
-import { useMutation } from '@apollo/client';
-import { ADD_USER } from '../utils/mutations';
+import React, { useState } from "react";
+import { ADD_USER } from "../utils/mutations";
+import { useMutation } from "@apollo/client";
 
-import Auth from '../utils/auth';
+import auth from "../utils/auth";
 
 const Signup = () => {
   const [formState, setFormState] = useState({
-    username: '',
-    email: '',
-    password: '',
+    username: "",
+    email: "",
+    password: "",
   });
+
+  // addUser using the mutation
   const [addUser, { error }] = useMutation(ADD_USER);
 
   // update state based on form input changes
@@ -26,23 +28,24 @@ const Signup = () => {
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
+    // TODO mutation
     try {
       const { data } = await addUser({
-        variables: { ...formState }
+        variables: { ...formState },
       });
-    
-      Auth.login(data.addUser.token);
+
+      // call Auth here to pass in the token and verify the token
+      auth.login(data.addUser.token);
     } catch (e) {
       console.error(e);
     }
   };
-
   return (
-    <main className="flex-row justify-center mb-4">
-      <div className="col-12 col-md-6">
-        <div className="card">
-          <h4 className="card-header">Sign Up</h4>
-          <div className="card-body">
+    <main className='flex-row justify-center mb-4'>
+      <div className='col-12 col-md-6'>
+        <div className='card bg-secondary'>
+          <h5 className='mx-4'>Sign Up</h5>
+          <div className='card-body'>
             <form onSubmit={handleFormSubmit}>
               <input
                 className="form-input"
@@ -53,6 +56,7 @@ const Signup = () => {
                 value={formState.username}
                 onChange={handleChange}
               />
+
               <input
                 className="form-input"
                 placeholder="Your email"
@@ -71,12 +75,16 @@ const Signup = () => {
                 value={formState.password}
                 onChange={handleChange}
               />
-              <button className="btn d-block w-100" type="submit">
+              <button type='submit'>
                 Submit
               </button>
             </form>
-
-            {error && <div>Signup failed</div>}
+          </div>
+          <div className="login-link">
+            <p>
+              Have an account?<br></br>
+              <a href="./Login">Login Here</a>
+            </p>
           </div>
         </div>
       </div>
