@@ -219,6 +219,9 @@ a {
 .profileMovies {
   list-style: none;
   display: inline-flex;
+  padding: 20pt;
+  font-family: 'Audiowide';
+  font-size: 20pt;
 }
 
 .watch {
