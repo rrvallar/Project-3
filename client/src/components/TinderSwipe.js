@@ -8,20 +8,32 @@ import { useMutation } from '@apollo/client';
 
 // 'Simple Function' reloads page on swipe //
 const Swipe = (props) => {
+  
   const [addMovie] = useMutation(ADD_MOVIE)
 
-  const handleSwipe = async (movie) => {
+  // const onCardLeftScreen = (direction) => {
+  //   console.log(direction)
+  //   if (direction === 'right') {
+  //     handleSwipe()
+  //   } else if (direction === 'left') {
+  //     console.log("Not today!")
+  //     window.location.reload(false);
+  //   }
+  // }
 
-    try {
-      await addMovie({
-        variables: { movieTitle: movie },
-      });
-    } catch (e) {
-      console.error(e);
-    }
-    // console.log(movie);
-    window.location.reload(false);
-    
+  const handleSwipe = async ( dir, movie) => {
+    if (dir === 'right') {
+      try {
+        await addMovie({
+          variables: { movieTitle: movie },
+        });
+      } catch (e) {
+        console.error(e);
+      }
+      window.location.reload(false);
+    } else 
+      console.log(dir);
+      window.location.reload(false);
   };
 
   //Movie Swiper Card  Start//
@@ -92,8 +104,9 @@ const Swipe = (props) => {
           <TinderCard
             className="swipe"
             key={movie.Title}
-            onSwipe={ () => handleSwipe(movie.Title) }
-            // onCardLeftScreen = {() => onCardLeftScreen(movie)}
+            // onCardLeftScreen={onCardLeftScreen}
+            onSwipe={ (dir) => handleSwipe(dir, movie.Title) }
+            // preventSwipe={['up', 'down']}
           >
             {/* inline styling in div for poster */}
             <div
