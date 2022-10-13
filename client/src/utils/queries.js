@@ -28,3 +28,18 @@ export const QUERY_MOVIE = gql`
     }
   }
 `;
+
+export const QUERY_ME = gql`
+query Query {
+  me {
+    _id
+    username
+    savedMovie {
+      _id
+      movieTitle
+      createdAt
+      username
+    }
+  }
+}
+`;
