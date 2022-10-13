@@ -1,14 +1,13 @@
 import { gql } from "@apollo/client";
 
 export const ADD_MOVIE = gql`
-  mutation movie($id: ID!) {
-    movie(_id: $id) {
-      _id
-      movieTitle
-      createdAt
-      username
-    }
+mutation addMovie($movieTitle: String!) {
+  addMovie (movieTitle: $movieTitle) {
+    _id
+    movieTitle
+    username
   }
+}
 `;
 export const ADD_USER = gql`
   mutation addUser($username: String!, $email: String!, $password: String!) {
