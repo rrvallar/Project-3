@@ -14,7 +14,7 @@ const Profile = () => {
         <div className="col-12 mb-3 col-lg-8">{/* PRINT THOUGHT LIST  */}</div>
 
         <div className="col-12 col-lg-3 mb-3">{/* PRINT FRIEND LIST */}</div>
-        <div className="col-12 col-lg-3 mb-3">{/* PRINT LIKED LIST */}<MoviesLiked/></div>
+        <div className="col-12 col-lg-3 mb-3">{/* PRINT LIKED LIST, NEED TO PASS USER DATA */}<MoviesLiked/></div>
       </div>
     </div>
   );
