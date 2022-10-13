@@ -6,7 +6,8 @@ import { useMutation } from '@apollo/client';
 
 // 'Simple Function' reloads page on swipe //
 const Swipe = (props) => {
-  // function refreshPage() {
+  
+ // function refreshPage() {
   //   window.location.reload(false);
   // };
   //   const Swiped = (direction, nameToDelete) => {
@@ -18,13 +19,15 @@ const Swipe = (props) => {
   const [addMovie] = useMutation(ADD_MOVIE);
 
   const handleSwipe = async (movie) => {
+    
     try {
       await addMovie({
-        variables: { id: movie.movieTitle },
+        variables: { movieTitle: movie.Title },
       });
     } catch (e) {
       console.error(e);
     }
+    
     window.location.reload(false);
   };
 
@@ -96,7 +99,8 @@ const Swipe = (props) => {
           <TinderCard
             className="swipe"
             key={movie.Title}
-            onSwipe={ handleSwipe }
+            onSwipe={ handleSwipe  }
+
           >
             {/* inline styling in div for poster */}
             <div
