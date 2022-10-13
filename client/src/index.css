@@ -5,6 +5,7 @@
   --primary: #15b9e0;
   --secondary: #6295aa;
   --tertiary: #FFFEF2;
+  --quaternary: #e59088;
   --dark: #6c7575;
   --error: rgb(228, 46, 1);
   --border-radius: 0.3rem;
@@ -108,13 +109,13 @@ p {
   text-align: center;
 }
 
-ul {
-  list-style-type: none;
+nav {
   margin-top: 20;
   padding: 0;
   font-size: 1.5rem;
-  color: var(--secondary);
-  text-decoration: none;
+  color: var(--quaternary) !important;
+  text-decoration: none !important;
+  font-family: 'Audiowide';
 }
 
 a {
@@ -166,23 +167,6 @@ button:hover {
   border-radius: var(--border-radius);
 }
 
-/* .btn {
-  font-size: 1.3rem;
-  text-decoration: none;
-  padding: 0.5rem 1.2rem;
-  margin: 5px 0;
-  border-radius: var(--border-radius);
-  border: none;
-  color: var(--tertiary);
-  outline: none;
-  background-color: var(--primary);
-  transition: all 0.5s;
-}
-
-.btn:hover {
-  color: #e59088;
-} */
-
 .btn-inline {
   display: inline;
 }
@@ -191,15 +175,7 @@ a {
   color: var(--tertiary);
   text-decoration: none;
  }
-  
- .movie-card {
-  flex: .45;
-  width: 500px;
-  height: 300px;
-  margin: 30px 350px 0 350px;
-  display: flex;
-  position: absolute;
-}
+
 
 .movieSwiper {
   align-items: center;
