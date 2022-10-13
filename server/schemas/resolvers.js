@@ -68,19 +68,20 @@ const resolvers = {
     },
     //Add A New Movie///
     addMovie: async (parent, args, context) => {
+      console.log(context)
       if (context.user) {
-        const movie = await Movie.create({
+        const movies = await Movie.create({
           ...args,
           username: context.user.username,
         });
         //Finds User By ID & Adds Movie//
         await User.findByIdAndUpdate(
           { _id: context.user._id },
-          { $push: { movies: movie._id } },
+          { $push: { savedMovie: movies._id } },
           { new: true }
         );
 
-        return movie;
+        return movies;
       }
       //Error If Not Logged In//
       throw new AuthenticationError("You need to be logged in!");

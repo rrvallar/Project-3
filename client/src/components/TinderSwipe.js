@@ -16,11 +16,10 @@ const Swipe = (props) => {
   //   };
 
   const [addMovie] = useMutation(ADD_MOVIE);
-
   const handleSwipe = async (movie) => {
     try {
       await addMovie({
-        variables: { id: movie.movieTitle },
+        variables: { movieTitle: movie.Title},
       });
     } catch (e) {
       console.error(e);

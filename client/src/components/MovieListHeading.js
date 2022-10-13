@@ -2,10 +2,17 @@ import React from 'react';
 
 
 //MovieListHeading Function //
-const MovieListHeading = (props) => {
+const MovieListHeading = (movies) => {
+	
 	return (
 		<div className='col'>
-			<h1>{props.heading}</h1>
+			{movies &&
+        		movies.map(movie => (
+					<div key={movie._id}>
+						<h1>{movie.Title}</h1>
+						<div>{movie.Poster}</div>
+					</div>
+				))}
 		</div>
 	);
 };
