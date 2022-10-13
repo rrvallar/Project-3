@@ -216,6 +216,11 @@ a {
   display: inline-flex;
 }
 
+.profileMovies {
+  list-style: none;
+  display: inline-flex;
+}
+
 .watch {
   background-color: var(--tertiary);
   padding: 30px;
