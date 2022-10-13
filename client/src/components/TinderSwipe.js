@@ -1,8 +1,10 @@
-import React from "react";
+import React,{useState} from "react";
+// import { useParams } from 'react-router-dom';
 // import TinderCard from '../react-tinder-card/index'
 import TinderCard from "react-tinder-card";
 import { ADD_MOVIE } from '../utils/mutations';
 import { useMutation } from '@apollo/client';
+// import { User } from "../../../server/models";
 
 // 'Simple Function' reloads page on swipe //
 const Swipe = (props) => {
@@ -14,12 +16,14 @@ const Swipe = (props) => {
   //     setLastDirection(direction);
   //     console.log(direction);
   //   };
-
+  const movieTitle = useState('');
   const [addMovie] = useMutation(ADD_MOVIE);
+
   const handleSwipe = async (movie) => {
+    // console.log(movie)
     try {
       await addMovie({
-        variables: { movieTitle: movie.Title},
+        variables: { movieTitle },
       });
     } catch (e) {
       console.error(e);
@@ -108,6 +112,7 @@ const Swipe = (props) => {
               }}
               className="card"
             ></div>
+            <h5 value={movieTitle}>{movie.Title}</h5>
           </TinderCard>
         ))}
       </div>

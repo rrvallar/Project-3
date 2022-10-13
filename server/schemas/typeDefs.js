@@ -7,16 +7,14 @@ const typeDefs = gql`
     _id: ID
     username: String
     email: String
-    friendCount: Int
-    movies: [Movie]
-    friends: [User]
+    savedMovie: [Movie]
   }
 
   type Movie {
     _id: ID
     movieTitle: String
     createdAt: String
-    username: String
+    email: String
   }
   type Auth {
     token: ID!
@@ -33,7 +31,7 @@ const typeDefs = gql`
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
-    addMovie(username: String!, movieTitle: String!): Movie
+    addMovie(movieTitle: String!): Movie
     addReaction(movieId: ID!, reactionBody: String!): Movie
     addFriend(friendId: ID!): User
   }

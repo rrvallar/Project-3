@@ -21,3 +21,34 @@ export const QUERY_MOVIE = gql`
     }
   }
 `;
+
+export const QUERY_USER = gql`
+query user($username: String!) {
+  user(username: $username) {
+    _id
+    username
+    email
+    savedMovie {
+      _id
+      movieTitle
+      createdAt
+      username
+    }
+  }
+}
+`;
+
+export const QUERY_ME = gql `
+query Query {
+  me {
+    _id
+    username
+    savedMovie {
+      _id
+      movieTitle
+      createdAt
+      username
+    }
+  }
+}
+`;

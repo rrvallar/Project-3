@@ -5,7 +5,7 @@ const movieSchema = new Schema(
   {
     movieTitle: {
       type: String,
-      required: 'You need to leave a thought!',
+      required: 'You need to leave a Movie!',
       minlength: 1,
       maxlength: 280
     },
@@ -25,10 +25,6 @@ const movieSchema = new Schema(
     }
   }
 );
-
-movieSchema.virtual('reactionCount').get(function() {
-  return this.reactions.length;
-});
 
 const Movie = model('Movie', movieSchema);
 
